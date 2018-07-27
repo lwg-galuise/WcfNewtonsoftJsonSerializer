@@ -110,9 +110,7 @@ namespace WcfNewtonsoftJsonSerializer
 
             var wia = operation.Behaviors.Find<WebInvokeAttribute>();
             if ( wia != null )
-            {
-                return wia.Method == "HEAD";
-            }
+                return ("HEAD"==wia.Method || "GET"==wia.Method);
 
             return false;
         }
